@@ -13,7 +13,7 @@
 - Production App Check token acquisition passed; a separate request without attestation was rejected with HTTP 401 (invalid App Check token).
 - Generated Hindi session exported as a text file.
 - Local-only model preparation stayed pending on desktop Chrome; this device path is unverified. Browser security policy disallowed inspecting chrome:// settings.
-- Cancel and three-minute timeout added; direct cloud mode allows bypassing slow local preparation.
+- Cancellation verified during local preparation; three-minute timeout added; direct cloud mode allows bypassing slow local preparation.
 - Public MIT source published: https://github.com/ramvtdl1-tech/studyrelay
 - YouTube video and Devpost entry have not been submitted.
 

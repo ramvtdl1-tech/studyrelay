@@ -24,7 +24,10 @@ $('generate').onclick=async()=>{
   const mode=$('mode').value;
   const local=mode==='local';
   const model=createModel(mode);
-  $('generate').disabled=true;$('cancel').hidden=false;$('status').textContent='Preparing on-device model. First download may take several minutes…';
+  $('generate').disabled=true;$('cancel').hidden=false;
+  for(const id of ['notes','task','language','mode','sample','file']) $(id).disabled=true;
+  $('output').hidden=true;$('download').hidden=true;$('empty').hidden=false;
+  $('route').textContent='Working on your session';$('status').textContent='Preparing on-device model. First download may take several minutes…';
   const ready=model.initializeDeviceModel(progress=>{if(signal.aborted)return;$('status').textContent=`Preparing local model: ${Math.round(progress*100)}%`;});
   if(local) await Promise.race([ready,canceled]); else ready.catch(()=>{});
   if(!local){$('status').textContent='Verifying app with Firebase App Check…';await Promise.race([verifyCloudAccess(),canceled]);}
@@ -34,6 +37,6 @@ $('generate').onclick=async()=>{
   $('output').textContent=text;$('output').hidden=false;$('empty').hidden=true;$('download').hidden=false;
   $('route').textContent=result.response.inferenceSource==='on_device'?'Ran on this device':result.response.inferenceSource==='in_cloud'?'Ran in Gemini cloud':local?'On-device only':'Hybrid request';
   $('status').textContent='Session ready. Review it alongside your notes.';
- }catch(error){$('status').textContent=`Unable to create session: ${error.message} Local mode requires supported Chrome and a downloaded model. Choose hybrid or Gemini cloud mode and retry.`;}finally{clearTimeout(timer);$('generate').disabled=false;$('cancel').hidden=true;controller=null;}
+ }catch(error){$('status').textContent=`Unable to create session: ${error.message} Local mode requires supported Chrome and a downloaded model. Choose hybrid or Gemini cloud mode and retry.`;}finally{clearTimeout(timer);$('generate').disabled=false;$('cancel').hidden=true;controller=null;for(const id of ['notes','task','language','mode','sample','file']) $(id).disabled=false;if($('output').hidden)$('route').textContent='Ready to retry';}
 };
 $('download').onclick=()=>{const url=URL.createObjectURL(new Blob([$('output').textContent],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='studyrelay-session.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};

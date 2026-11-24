@@ -10,7 +10,8 @@
 - [x] Hindi five-question quiz with answers generated.
 - [ ] Verify flashcards with live models.
 - [x] Generated Hindi session downloaded as text. Narrow in-app layout visually inspected.
-- [ ] Test cancel, timeout and text import.
+- [x] Cancel during Chrome local model preparation restored the Create button and displayed a retry message.
+- [ ] Test automatic timeout and text import.
 - [x] Missing App Check token rejected with HTTP 401; valid production attestation acquired by the app.
 - [ ] Test offline generation after app/model preparation. A fresh offline reload is not supported.
 - [ ] Capture device/browser/version and screenshots of successful model responses.
