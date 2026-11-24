@@ -6,7 +6,7 @@ Turn lecture notes into revision guides, practice quizzes, and flashcards in Eng
 
 ## Why hybrid AI?
 
-Students with unreliable connectivity should be able to revise without sending every session to a server. StudyRelay defaults to local-only inference. Uncheck the local-only option to explicitly permit Firebase AI Logic to fall back to Gemini in the cloud. The response badge reports the SDK's actual inference source when available.
+Students with unreliable connectivity should be able to revise without sending every session to a server. StudyRelay defaults to local-only inference. Choose hybrid mode to explicitly permit Firebase AI Logic to fall back to Gemini in the cloud, or Gemini cloud to run remotely. The response badge reports the SDK's actual inference source when available.
 
 ## Run and deploy
 
@@ -42,7 +42,7 @@ Offline inference requires already-loaded app resources and a prepared local mod
 
 ## Verification and submission
 
-See [build status](docs/BUILD-STATUS.md), [live QA](docs/QA.md), and [submission draft](docs/SUBMISSION.md). Build success does not establish that either inference path works on a specific device. Live generation verification is still pending; do not represent it as passed.
+See [build status](docs/BUILD-STATUS.md), [live QA](docs/QA.md), and [submission draft](docs/SUBMISSION.md). Build success does not establish that either inference path works on a specific device. Real direct cloud generation, hybrid fallback to cloud, Hindi quiz generation and export passed on the hosted app. Local-only generation remains unverified on the test device.
 
 ## Disclosure and license
 

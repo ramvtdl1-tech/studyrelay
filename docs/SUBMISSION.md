@@ -15,7 +15,7 @@ Students with unreliable Wi-Fi need useful revision tools without depending on a
 Transforms pasted or imported text notes into revision guides, practice quizzes, and flashcards in English or Hindi. Sessions can be downloaded. No payment or account is required.
 
 ## How it is built
-Vite and Firebase AI Logic use ONLY_ON_DEVICE by default and PREFER_ON_DEVICE when the user permits cloud fallback. Production App Check uses domain-restricted reCAPTCHA Enterprise attestation. A response badge reports the actual SDK inference source. No database or analytics is used. See README for limitations and Codex/third-party disclosures.
+Vite and Firebase AI Logic use ONLY_ON_DEVICE by default and PREFER_ON_DEVICE when the user permits cloud fallback; ONLY_IN_CLOUD is also available. Production App Check uses domain-restricted reCAPTCHA Enterprise attestation. A response badge reports the actual SDK inference source. No database or analytics is used. See README for limitations and Codex/third-party disclosures.
 
 ## Three-minute demo plan
 0:00–0:25: Explain the unreliable-connectivity student problem.
@@ -28,7 +28,7 @@ Vite and Firebase AI Logic use ONLY_ON_DEVICE by default and PREFER_ON_DEVICE wh
 Complete live QA before recording. Do not present sample source notes as generated output or claim a model path passed without evidence.
 
 ## Remaining entry steps
-- Complete and record successful live local/cloud tests.
+- Complete and record the local device test. Direct cloud and hybrid cloud fallback tests passed.
 - Record a functioning demo, at most three minutes, public on YouTube, in English or with English subtitles.
 - Verify public source contains MIT license, full source and setup instructions.
 - Add eligible team members and disclose AI assistance/prior work accurately.
