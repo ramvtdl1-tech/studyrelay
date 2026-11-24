@@ -16,14 +16,14 @@ $('cancel').onclick=()=>controller?.abort();
 $('generate').onclick=async()=>{
  let timer;
  try{
-  controller=new AbortController();
-  const signal=controller.signal;
-  timer=setTimeout(()=>controller.abort(),180000);
-  const canceled=new Promise((_,reject)=>signal.addEventListener('abort',()=>reject(new Error('Request canceled or exceeded three minutes. Retry, or allow cloud fallback if local preparation is taking too long.')),{once:true}));
   const prompt=promptFor($('notes').value,$('task').value,$('language').value);
   const mode=$('mode').value;
   const local=mode==='local';
   const model=createModel(mode);
+  controller=new AbortController();
+  const signal=controller.signal;
+  timer=setTimeout(()=>controller.abort(),180000);
+  const canceled=new Promise((_,reject)=>signal.addEventListener('abort',()=>reject(new Error('Request canceled or exceeded three minutes. Retry, or allow cloud fallback if local preparation is taking too long.')),{once:true}));
   $('generate').disabled=true;$('cancel').hidden=false;
   for(const id of ['notes','task','language','mode','sample','file']) $(id).disabled=true;
   $('output').hidden=true;$('download').hidden=true;$('empty').hidden=false;
