@@ -17,3 +17,9 @@
 - [ ] Capture device/browser/version and screenshots of successful model responses.
 
 Do not mark an inference path as passed from policy selection alone. Initial Chrome local requests stayed pending. The browser security policy prevents inspection of chrome:// flags. The user must prepare a supported on-device environment for the local demo; no local-success claim has been made.
+
+## Post-restart local test
+
+After the user enabled the Prompt API flag and relaunched Chrome, the visible readiness diagnostic returned `downloading`. Local output was not produced. The Chrome profile volume (`/System/Volumes/Data`) had 9,885,592 KiB available (about 9.4 GiB). Chrome documentation requires at least 22 GB free for initial model setup and says models are removed below 10 GB free. Free sufficient disk space before retrying; local inference remains unverified. No user files were deleted.
+
+Reference: https://developer.chrome.com/docs/ai/get-started#hardware

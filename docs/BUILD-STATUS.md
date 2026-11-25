@@ -18,3 +18,9 @@
 - YouTube video and Devpost entry have not been submitted.
 
 Some workspace sources were offloaded by Google Drive. A local build was restored, preserving original offloaded files under ignored `.recovery/` in the workspace. Never publish `.recovery`, environment files, credentials or debug logs.
+
+## Post-restart local test
+
+After the user enabled the Prompt API flag and relaunched Chrome, the visible readiness diagnostic returned `downloading`. Local output was not produced. The Chrome profile volume (`/System/Volumes/Data`) had 9,885,592 KiB available (about 9.4 GiB). Chrome documentation requires at least 22 GB free for initial model setup and says models are removed below 10 GB free. Free sufficient disk space before retrying; local inference remains unverified. No user files were deleted.
+
+Reference: https://developer.chrome.com/docs/ai/get-started#hardware
