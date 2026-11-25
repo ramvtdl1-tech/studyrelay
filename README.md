@@ -38,7 +38,7 @@ Browser UI → source-grounded prompt → Firebase AI Logic SDK → Chrome local
 
 Notes and generated sessions remain in page memory; refresh clears them. A session can be downloaded as text. No account, database, analytics or note persistence is used. reCAPTCHA/App Check contacts Google for attestation. Cloud-permitted sessions may send the notes to Gemini. Generated answers may be inaccurate and should be checked against course materials.
 
-Offline inference requires already-loaded app resources and a prepared local model. Offline page reload/PWA support is not implemented. Requests can be canceled and time out after three minutes; canceling a local model download may not stop the browser's background download.
+Offline inference requires already-loaded app resources and a prepared local model. Offline page reload/PWA support is not implemented. Requests can be canceled. Initial local model preparation allows up to 15 minutes, followed by a three-minute generation timeout; canceling a local model download may not stop the browser's background download.
 
 ## Verification and submission
 
@@ -49,3 +49,5 @@ See [build status](docs/BUILD-STATUS.md), [live QA](docs/QA.md), and [submission
 New code created November 25, 2026 with Codex assistance. Firebase and Vite are third-party dependencies. DM Sans/Manrope are loaded through Google Fonts. Study notes were authored for this project. An npm override updates a vulnerable transitive gRPC dependency; installation audit reported zero vulnerabilities at build time. Original project code is MIT licensed. No unrelated existing application code was intentionally reused.
 
 References: [Firebase hybrid guide](https://firebase.google.com/docs/ai-logic/hybrid/web/get-started), [App Check guide](https://firebase.google.com/docs/app-check/web/recaptcha-enterprise-provider), [official rules](https://firebasehybridaihackathon.devpost.com/rules).
+
+Use **Check local model readiness** to see whether Chrome reports ready, downloadable, downloading, or unavailable. Local configuration requests text-only English input/output capability; Hindi output has been verified in cloud mode only.
